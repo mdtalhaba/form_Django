@@ -59,8 +59,9 @@ def home(req) :
 
 def about(req) :
     if req.method == 'POST' :
+        username = req.POST.get('username')
         email = req.POST.get('email')
         password = req.POST.get('password')
-        return render(req, 'first_app/about.html', { 'email' : email, 'password' : password})
+        return render(req, 'first_app/about.html', { 'email' : email, 'password' : password, 'username' : username})
     
     return render(req, 'first_app/about.html')

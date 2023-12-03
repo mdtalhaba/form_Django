@@ -1,36 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-    
-<div style="width: 300px; height: 500px; margin: auto" class="pt-5">
-    <h3>Log In</h3>
-    <form method="post" action="/about/">
+{% load crispy_forms_tags %}
+
+<div style="width: 300px; min-height: 500px; margin: auto" class="py-5">
+    <h3>Explore Django Form</h3>
+    <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email</label>
-        <input
-          type="email"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          name="email"
-          placeholder="Enter Your Email"
-        />
-      </div>
-      <div class="mb-2">
-        <label for="exampleInputpassword" class="form-label">Password</label>
-        <input
-          type="Password"
-          class="form-control"
-          id="exampleInputpassword"
-          aria-describedby="PasswordHelp"
-          name="password"
-          placeholder="Enter Your Password"
-        />
-      </div>
-      <small class="d-block">Not Have Any Account / <a class="link-opacity-75-hover" href="{% url "register" %}">Register</a></small>
+      {{form | crispy }}
       <button type="submit" class="btn btn-dark mt-2">Submit</button>
     </form>
   </div>
 
 {% endblock content %}
+
+
+{% comment %} <div class="mb-3">
+  <label for="exampleInputEmail1" class="form-label">Email</label>
+  <input
+    type="email"
+    class="form-control"
+    id="exampleInputEmail1"
+    aria-describedby="emailHelp"
+    name="email"
+    placeholder="Enter Your Email"
+  />
+</div>
+<div class="mb-2">
+  <label for="exampleInputpassword" class="form-label">Password</label>
+  <input
+    type="Password"
+    class="form-control"
+    id="exampleInputpassword"
+    aria-describedby="PasswordHelp"
+    name="password"
+    placeholder="Enter Your Password"
+  />
+</div>
+<small class="d-block">Not Have Any Account / <a class="link-opacity-75-hover" href="{% url "register" %}">Register</a></small> {% endcomment %}
