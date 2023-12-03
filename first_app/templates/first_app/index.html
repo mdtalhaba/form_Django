@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static './css/index.css' %}">
+
+<div class="container my-3">
+    <div class="gradient-overlay-container">
+        <img src="{% static './images/banner_img.jpg' %}" alt="Your Image Description">
+        <div class="text-overlay"><span style="color:#B0CC02;">Organic</span> | <span style="color: #E77800;">Healthy</span> | <span style="color: #FFD500;">Fresh</span></div>
+    </div>
+</div>
+
+
+<div class="my-5 d-flex justify-content-center flex-wrap gap-4 m-auto" style="max-width: 1225px;">
+    {% for i in meals %}
+    <div class="card rounded-0" style="width: 18rem;">
+        <img src="{{ i.strMealThumb }}" class="card-img-top rounded-0" alt="...">
+        <div class="card-body">
+        <h5 class="card-title mb-3">{{ i.strMeal }}</h5>
+        <a href="?{{i.idMeal}}" class="btn btn-dark w-100">See Details</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}

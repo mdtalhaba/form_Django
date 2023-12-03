@@ -1,0 +1,26 @@
+#nav-bar{
+    background-color: rgb(234, 252, 234);
+}
+
+
+.footer-container{
+    background-color: #0E071B;
+    padding: 80px;
+    list-style: none;
+}
+
+.survises{
+    color: #CFCFCF;
+}
+
+.survises li{
+    margin-top: 10px;
+}
+
+.assistence{
+    color: #CFCFCF;
+}
+
+.assistence li{
+    margin-top: 10px;
+}
